@@ -1,0 +1,742 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Red+Hat+Text:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Red+Hat+Text:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+button {
+  border: none;
+  border-radius: 5px;
+  font-family: "Nunito Sans", sans-serif;
+  cursor: pointer;
+}
+
+.normal {
+  height: 44px;
+  width: 150px;
+}
+
+.w-small {
+  height: 44px;
+  width: 120px;
+}
+
+.transparent {
+  background-color: transparent;
+  color: #f1f4f8;
+  border: 1px solid #f1f4f8;
+  font-size: 1rem;
+}
+
+.bg-green {
+  background-color: #08b14e;
+  color: #f1f4f8;
+  font-size: 1rem;
+}
+
+.programming {
+  height: 15px;
+  font-family: "Red Hat Text", sans-serif;
+  font-weight: 700;
+  font-size: 0.7rem;
+}
+
+.js {
+  background-color: #ffee00;
+  width: 90px;
+}
+
+.react {
+  width: 45px;
+  background-color: #00ccff;
+}
+
+.negocios {
+  height: 15px;
+  font-family: "Red Hat Text", sans-serif;
+  font-weight: 700;
+  font-size: 0.7rem;
+  background-color: #B7BBC6;
+  width: 90px;
+}
+
+.startups {
+  height: 15px;
+  font-family: "Red Hat Text", sans-serif;
+  font-weight: 700;
+  font-size: 0.7rem;
+  background-color: #ca3a3a;
+  width: 80px;
+  color: #f1f4f8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 100vw;
+    height: auto;
+    padding: 0;
+  }
+  .header {
+    height: 12vh;
+    display: flex;
+    background-color: #353A40;
+  }
+  .header .brand {
+    width: 60%;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header .brand img {
+    width: 100px;
+  }
+  .header .brand h4 {
+    font-size: 0.9rem;
+    color: #f1f4f8;
+    font-family: "Nunito Sans", sans-serif;
+  }
+  .header .nav-menu {
+    height: inherit;
+    width: 40%;
+    display: none;
+  }
+  .header .nav-menu ul li {
+    display: block;
+  }
+  .header .nav-menu ul li a {
+    display: block;
+    text-decoration: none;
+    color: #f1f4f8;
+  }
+  .bg-main {
+    width: 100vw;
+    padding: 0;
+    height: 75vh;
+    background-image: url(/img/hawaii.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  .info-event {
+    width: inherit;
+    height: inherit;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    filter: none;
+  }
+  .info-event .texts {
+    color: #f1f4f8;
+    margin-bottom: 40px;
+  }
+  .info-event .texts h1 {
+    font-size: 3rem;
+    font-family: "Red Hat Text", sans-serif;
+  }
+  .info-event .texts p {
+    margin-top: 20px;
+    font-size: 1rem;
+    font-family: "Red Hat Text", sans-serif;
+  }
+  .oradores {
+    width: 100vw;
+    height: auto;
+    background-color: #f1f4f8;
+    padding: 20px 0px 50px 0px;
+  }
+  .oradores .text {
+    padding: 50px 0 40px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .oradores .text h5 {
+    font-size: 0.8rem;
+    font-family: "Nunito Sans", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .oradores .text h2 {
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-family: "Red Hat Text", sans-serif;
+  }
+  .oradores-cards {
+    width: 100vw;
+    height: auto;
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    gap: 20px;
+  }
+  .oradores-cards .card {
+    width: 85vw;
+    border-radius: 15px;
+    box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.5);
+    background-color: rgba(183, 187, 198, 0.5);
+  }
+  .oradores-cards .card img {
+    width: 100%;
+  }
+  .oradores-cards .info-card {
+    padding: 0 10px;
+  }
+  .oradores-cards .info-card .text {
+    padding: 20px 0;
+  }
+  .oradores-cards .info-card .text h3 {
+    width: 80vw;
+    font-size: 1.2 0.9rem;
+    font-family: "Red Hat Text", sans-serif;
+  }
+  .oradores-cards .info-card .text p {
+    font-size: 1rem;
+    font-family: "Red Hat Text", sans-serif;
+  }
+  .container-bs {
+    display: grid;
+    grid-template-columns: auto;
+    width: 100vw;
+    padding: 0px 0px 50px 0px;
+  }
+  .container-bs img {
+    width: 100%;
+    margin: 0;
+  }
+  .container-bs .info-container {
+    margin-top: -10px;
+    padding: 40px 20px;
+    background-color: #2F5586;
+    color: #f1f4f8;
+  }
+  .container-bs .info-container h2 {
+    font-size: 2rem;
+    font-family: "Nunito Sans", sans-serif;
+  }
+  .container-bs .info-container p {
+    font-size: 1rem;
+    font-family: "Red Hat Text", sans-serif;
+    margin-bottom: 30px;
+  }
+  .ser-orador {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+  }
+  .ser-orador h5 {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .ser-orador h2 {
+    font-family: "Red Hat Text", sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .ser-orador p {
+    font-family: "Red Hat Text", sans-serif;
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  .ser-orador form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+  }
+  .ser-orador form input {
+    background-color: rgba(183, 187, 198, 0.5);
+    height: 35px;
+    border-radius: 5px;
+    margin: 5px 0px;
+    border: none;
+    padding: 0 10px;
+  }
+  .ser-orador form textarea {
+    padding: 10px 10px;
+    height: 100px;
+    margin-top: 10px;
+  }
+  .ser-orador form p {
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+  }
+  .ser-orador form button {
+    margin: auto;
+  }
+  footer {
+    background-color: #07616d;
+    color: #f1f4f8;
+    padding: 20px 20px;
+  }
+  footer ul li {
+    list-style: none;
+  }
+  footer ul li a {
+    text-decoration: none;
+    color: #f1f4f8;
+    font-family: "Red Hat Text", sans-serif;
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 600px) and (max-width: 900px) {
+  .header {
+    height: 12vh;
+    display: flex;
+    background-color: #353A40;
+  }
+  .header .brand {
+    width: 60%;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header .brand img {
+    width: 100px;
+  }
+  .header .brand h4 {
+    font-size: 0.9rem;
+    color: #f1f4f8;
+    font-family: "Nunito Sans", sans-serif;
+  }
+  .header .nav-menu {
+    height: inherit;
+    width: 40%;
+    display: none;
+  }
+  .header .nav-menu ul li {
+    display: block;
+  }
+  .header .nav-menu ul li a {
+    display: block;
+    text-decoration: none;
+    color: #f1f4f8;
+  }
+  .bg-main {
+    width: 100vw;
+    padding: 0;
+    height: 75vh;
+    background-image: url(/img/hawaii.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  .info-event {
+    width: inherit;
+    height: inherit;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    filter: none;
+  }
+  .info-event .texts {
+    color: #f1f4f8;
+    margin-bottom: 40px;
+  }
+  .info-event .texts h1 {
+    font-size: 3rem;
+    font-family: "Red Hat Text", sans-serif;
+  }
+  .info-event .texts p {
+    margin-top: 20px;
+    font-size: 1rem;
+    font-family: "Red Hat Text", sans-serif;
+  }
+  .oradores {
+    width: 100vw;
+    height: auto;
+    background-color: #f1f4f8;
+    padding: 20px 0px 50px 0px;
+  }
+  .oradores .text {
+    padding: 50px 0 40px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .oradores .text h5 {
+    font-size: 0.8rem;
+    font-family: "Nunito Sans", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .oradores .text h2 {
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-family: "Red Hat Text", sans-serif;
+  }
+  .oradores-cards {
+    width: 100%;
+    background-color: red;
+    height: auto;
+    display: grid;
+    grid-template-columns: auto;
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+    left: auto;
+    right: auto;
+  }
+  .oradores-cards .card {
+    width: 85%;
+    border-radius: 15px;
+    box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.5);
+    background-color: yellow;
+  }
+  .oradores-cards .card img {
+    width: 100%;
+  }
+  .oradores-cards .info-card {
+    padding: 0 10px;
+  }
+  .oradores-cards .info-card .text {
+    padding: 20px 0;
+  }
+  .oradores-cards .info-card .text h3 {
+    width: 80vw;
+    font-size: 1.2 0.9rem;
+    font-family: "Red Hat Text", sans-serif;
+  }
+  .oradores-cards .info-card .text p {
+    font-size: 1rem;
+    font-family: "Red Hat Text", sans-serif;
+  }
+  .container-bs {
+    display: grid;
+    grid-template-columns: auto;
+    width: 100vw;
+    padding: 0px 0px 50px 0px;
+  }
+  .container-bs img {
+    width: 100%;
+    margin: 0;
+  }
+  .container-bs .info-container {
+    margin-top: -10px;
+    padding: 40px 20px;
+    background-color: #2F5586;
+    color: #f1f4f8;
+  }
+  .container-bs .info-container h2 {
+    font-size: 2rem;
+    font-family: "Nunito Sans", sans-serif;
+  }
+  .container-bs .info-container p {
+    font-size: 1rem;
+    font-family: "Red Hat Text", sans-serif;
+    margin-bottom: 30px;
+  }
+  .ser-orador {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+  }
+  .ser-orador h5 {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .ser-orador h2 {
+    font-family: "Red Hat Text", sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .ser-orador p {
+    font-family: "Red Hat Text", sans-serif;
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  .ser-orador form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+  }
+  .ser-orador form input {
+    background-color: rgba(183, 187, 198, 0.5);
+    height: 35px;
+    border-radius: 5px;
+    margin: 5px 0px;
+    border: none;
+    padding: 0 10px;
+  }
+  .ser-orador form textarea {
+    padding: 10px 10px;
+    height: 100px;
+    margin-top: 10px;
+  }
+  .ser-orador form p {
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+  }
+  .ser-orador form button {
+    margin: auto;
+  }
+  footer {
+    background-color: #07616d;
+    color: #f1f4f8;
+    padding: 20px 20px;
+  }
+  footer ul li {
+    list-style: none;
+  }
+  footer ul li a {
+    text-decoration: none;
+    color: #f1f4f8;
+    font-family: "Red Hat Text", sans-serif;
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 900px) {
+  .header {
+    height: 12vh;
+    display: flex;
+    background-color: #353A40;
+  }
+  .header .brand {
+    width: 30%;
+    height: inherit;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 50px;
+  }
+  .header .brand img {
+    width: 100px;
+  }
+  .header .brand h4 {
+    font-size: 0.9rem;
+    color: #f1f4f8;
+    font-family: "Nunito Sans", sans-serif;
+  }
+  .header .nav-menu {
+    height: inherit;
+    width: 70%;
+    display: block;
+  }
+  .header .nav-menu ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .header .nav-menu ul li {
+    display: block;
+    padding-left: 10px;
+  }
+  .header .nav-menu ul li a {
+    display: block;
+    text-decoration: none;
+    color: #f1f4f8;
+    font-family: "Nunito Sans", sans-serif;
+  }
+  .bg-main {
+    width: 100%;
+    padding: 0;
+    height: 85vh;
+    background-image: url(/img/hawaii.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  .info-event {
+    width: inherit;
+    height: inherit;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0 150px 50px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  .info-event .texts {
+    width: 600px;
+    color: #f1f4f8;
+    margin-bottom: 40px;
+  }
+  .info-event .texts h1 {
+    font-size: 3rem;
+    font-family: "Red Hat Text", sans-serif;
+  }
+  .info-event .texts p {
+    margin-top: 20px;
+    font-size: 1rem;
+    font-family: "Red Hat Text", sans-serif;
+  }
+  .oradores {
+    width: 100%;
+    height: auto;
+    background-color: #f1f4f8;
+  }
+  .oradores .text {
+    padding: 50px 0 40px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .oradores .text h5 {
+    font-size: 0.8rem;
+    font-family: "Nunito Sans", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .oradores .text h2 {
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-family: "Red Hat Text", sans-serif;
+  }
+  .oradores-cards {
+    width: 80%;
+    height: auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-items: center;
+    align-items: center;
+    margin: auto;
+    padding-bottom: 50px;
+  }
+  .oradores-cards .card {
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.5);
+  }
+  .oradores-cards .card img {
+    width: 100%;
+  }
+  .oradores-cards .info-card {
+    padding: 0 10px;
+  }
+  .oradores-cards .info-card .text {
+    padding: 20px 0;
+  }
+  .oradores-cards .info-card .text h3 {
+    width: 100%;
+    font-size: 1.2 0.9rem;
+    font-family: "Red Hat Text", sans-serif;
+  }
+  .oradores-cards .info-card .text p {
+    font-size: 1rem;
+    font-family: "Red Hat Text", sans-serif;
+  }
+  .container-bs {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 381px;
+    width: 100%;
+  }
+  .container-bs .bs-img {
+    width: 100%;
+    background-color: red;
+  }
+  .container-bs .bs-img img {
+    width: 100%;
+  }
+  .container-bs .info-container {
+    width: 100%;
+    background-color: #2F5586;
+    color: #f1f4f8;
+    padding: 5%;
+  }
+  .container-bs .info-container h2 {
+    font-size: 2rem;
+    font-family: "Nunito Sans", sans-serif;
+  }
+  .container-bs .info-container p {
+    font-size: 1rem;
+    font-family: "Red Hat Text", sans-serif;
+    margin-bottom: 30px;
+  }
+  .ser-orador {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+  }
+  .ser-orador h5 {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .ser-orador h2 {
+    font-family: "Red Hat Text", sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .ser-orador p {
+    font-family: "Red Hat Text", sans-serif;
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  .ser-orador form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+  }
+  .ser-orador form input {
+    background-color: rgba(183, 187, 198, 0.5);
+    height: 35px;
+    border-radius: 5px;
+    margin: 5px 0px;
+    border: none;
+    padding: 0 10px;
+  }
+  .ser-orador form textarea {
+    padding: 10px 10px;
+    height: 100px;
+    margin-top: 10px;
+  }
+  .ser-orador form p {
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+  }
+  .ser-orador form button {
+    margin: auto;
+  }
+  footer {
+    height: 100px;
+    background-color: #07616d;
+    color: #f1f4f8;
+  }
+  footer ul {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  footer ul li {
+    padding-left: 10px;
+    list-style: none;
+  }
+  footer ul li a {
+    text-decoration: none;
+    color: #f1f4f8;
+    font-family: "Red Hat Text", sans-serif;
+    font-size: 0.8rem;
+  }
+}/*# sourceMappingURL=main.css.map */

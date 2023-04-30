@@ -1,0 +1,61 @@
+@import "./colores","./fonts";
+
+button{
+    border: none;
+    border-radius: 5px;
+    font-family: $font1;
+    cursor: pointer;
+}
+
+.normal{
+    height: 44px;
+    width: 150px;
+}
+.w-small{
+    height: 44px;
+    width: 120px;
+}
+
+.transparent{
+    background-color: transparent;
+    color: $white;
+    border: 1px solid $white;
+    font-size: $btn-normal;
+}
+.bg-green{
+    background-color: $green;
+    color: $white;
+    font-size: $btn-normal;
+}
+.programming{
+    height: 15px;
+    font-family: $font2;
+    font-weight: 700;
+    font-size: 0.7rem;
+}
+.js{
+    background-color: #ffee00;
+    width: 90px;
+}
+.react{
+    width: 45px;
+    background-color: #00ccff;
+}
+.negocios{
+    height: 15px;
+    font-family: $font2;
+    font-weight: 700;
+    font-size: 0.7rem;
+    background-color:  $complement;
+    width: 90px;
+}
+.startups{
+    height: 15px;
+    font-family: $font2;
+    font-weight: 700;
+    font-size: 0.7rem;
+    background-color:  $red;
+    width: 80px;
+    color: $white;
+}
+
