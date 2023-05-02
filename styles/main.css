@@ -24,9 +24,23 @@ button {
   font-size: 1rem;
 }
 
+.transparent:hover {
+  background-color: #353A40;
+  color: #f1f4f8;
+  border: none;
+  font-size: 1rem;
+}
+
 .bg-green {
   background-color: #08b14e;
   color: #f1f4f8;
+  font-size: 1rem;
+  transition: ease all 0.3s;
+}
+
+.bg-green:hover {
+  background-color: rgb(86, 255, 129);
+  color: black;
   font-size: 1rem;
 }
 
@@ -77,6 +91,7 @@ button {
     width: 100vw;
     height: auto;
     padding: 0;
+    position: relative;
   }
   .header {
     height: 12vh;
@@ -111,37 +126,76 @@ button {
     text-decoration: none;
     color: #f1f4f8;
   }
-  .bg-main {
+  .carrousel {
+    position: relative;
     width: 100vw;
-    padding: 0;
-    height: 75vh;
-    background-image: url(/img/hawaii.jpg);
-    background-size: cover;
-    background-position: center;
   }
-  .info-event {
+  .slides {
+    height: 75vh;
+    position: relative;
+    overflow: hidden;
+  }
+  .slides .slide {
+    animation: infinite;
+    animation-duration: 30s;
+    animation-name: slide;
+    animation-direction: alternate-reverse;
+  }
+  .slides .slide img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    filter: brightness(0.6);
+  }
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    33% {
+      transform: translateX(-100%);
+    }
+    66% {
+      transform: translateX(-200%);
+    }
+    100% {
+      transform: translateX(-300%);
+    }
+  }
+  .slector-slide {
     width: inherit;
-    height: inherit;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 0 20px;
+    position: absolute;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    filter: none;
+    margin-top: -30px;
   }
-  .info-event .texts {
+  .slector-slide .line {
+    margin-top: -200px;
+    width: 35px;
+    height: 5px;
+    background-color: rgba(235, 235, 235, 0.5);
+    border-radius: 20px;
+    margin: 2px;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.185);
+  }
+  .info-event {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 30px;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     color: #f1f4f8;
-    margin-bottom: 40px;
   }
-  .info-event .texts h1 {
+  .info-event h1 {
+    font-family: "Red Hat Text", sans-serif;
     font-size: 3rem;
-    font-family: "Red Hat Text", sans-serif;
   }
-  .info-event .texts p {
-    margin-top: 20px;
-    font-size: 1rem;
+  .info-event p {
     font-family: "Red Hat Text", sans-serif;
+    font-size: 1rem;
   }
   .oradores {
     width: 100vw;
@@ -262,10 +316,15 @@ button {
     border: none;
     padding: 0 10px;
   }
+  .ser-orador form input:focus {
+    outline: none;
+  }
   .ser-orador form textarea {
     padding: 10px 10px;
+    border-radius: 5px;
     height: 100px;
     margin-top: 10px;
+    outline: none;
   }
   .ser-orador form p {
     font-size: 0.8rem;
@@ -323,37 +382,76 @@ button {
     text-decoration: none;
     color: #f1f4f8;
   }
-  .bg-main {
+  .carrousel {
+    position: relative;
     width: 100vw;
-    padding: 0;
-    height: 75vh;
-    background-image: url(/img/hawaii.jpg);
-    background-size: cover;
-    background-position: center;
   }
-  .info-event {
+  .slides {
+    height: 75vh;
+    position: relative;
+    overflow: hidden;
+  }
+  .slides .slide {
+    animation: infinite;
+    animation-duration: 30s;
+    animation-name: slide;
+    animation-direction: alternate-reverse;
+  }
+  .slides .slide img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    filter: brightness(0.6);
+  }
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    33% {
+      transform: translateX(-100%);
+    }
+    66% {
+      transform: translateX(-200%);
+    }
+    100% {
+      transform: translateX(-300%);
+    }
+  }
+  .slector-slide {
     width: inherit;
-    height: inherit;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 0 20px;
+    position: absolute;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    filter: none;
+    margin-top: -30px;
   }
-  .info-event .texts {
+  .slector-slide .line {
+    margin-top: -200px;
+    width: 35px;
+    height: 5px;
+    background-color: rgba(235, 235, 235, 0.5);
+    border-radius: 20px;
+    margin: 2px;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.185);
+  }
+  .info-event {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 30px;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     color: #f1f4f8;
-    margin-bottom: 40px;
   }
-  .info-event .texts h1 {
+  .info-event h1 {
+    font-family: "Red Hat Text", sans-serif;
     font-size: 3rem;
-    font-family: "Red Hat Text", sans-serif;
   }
-  .info-event .texts p {
-    margin-top: 20px;
-    font-size: 1rem;
+  .info-event p {
     font-family: "Red Hat Text", sans-serif;
+    font-size: 1rem;
   }
   .oradores {
     width: 100vw;
@@ -547,40 +645,91 @@ button {
   .header .nav-menu ul li a {
     display: block;
     text-decoration: none;
-    color: #f1f4f8;
+    color: rgb(196, 196, 196);
     font-family: "Nunito Sans", sans-serif;
   }
-  .bg-main {
+  .header .nav-menu ul li #comprartickets {
+    color: rgb(41, 247, 41);
+  }
+  .header .nav-menu ul li #confer {
+    color: rgb(255, 255, 255);
+  }
+  .carrousel {
+    position: relative;
     width: 100%;
-    padding: 0;
-    height: 85vh;
-    background-image: url(/img/hawaii.jpg);
-    background-size: cover;
-    background-position: center;
+  }
+  .slides {
+    background-color: black;
+    height: 75vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+  }
+  .slides .slide {
+    animation: infinite cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-duration: 15s;
+    animation-name: slide;
+    animation-direction: alternate-reverse;
+  }
+  .slides .slide img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    filter: brightness(0.7);
+  }
+  @keyframes slide {
+    0% {
+      transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  .slector-slide {
+    width: inherit;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -30px;
+  }
+  .slector-slide .line {
+    margin-top: -200px;
+    width: 35px;
+    height: 5px;
+    background-color: rgba(235, 235, 235, 0.5);
+    border-radius: 20px;
+    margin: 2px;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.185);
   }
   .info-event {
-    width: inherit;
-    height: inherit;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 0 150px 50px 0px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 75vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     align-items: flex-end;
-  }
-  .info-event .texts {
-    width: 600px;
+    justify-content: flex-end;
     color: #f1f4f8;
-    margin-bottom: 40px;
+    background-color: rgba(53, 58, 64, 0.4);
+    padding: 0 5% 10% 0;
   }
-  .info-event .texts h1 {
+  .info-event h1 {
+    width: 40vw;
+    font-family: "Red Hat Text", sans-serif;
     font-size: 3rem;
-    font-family: "Red Hat Text", sans-serif;
   }
-  .info-event .texts p {
-    margin-top: 20px;
-    font-size: 1rem;
+  .info-event p {
+    width: 40vw;
     font-family: "Red Hat Text", sans-serif;
+    font-size: 1rem;
+  }
+  .info-event .btns {
+    margin-top: 3%;
   }
   .oradores {
     width: 100%;
@@ -617,8 +766,7 @@ button {
   }
   .oradores-cards .card {
     width: 300px;
-    border-radius: 15px;
-    box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
   }
   .oradores-cards .card img {
     width: 100%;
@@ -643,16 +791,18 @@ button {
     grid-template-columns: auto auto;
     grid-template-rows: 381px;
     width: 100%;
+    overflow: hidden;
+    height: 50vh;
   }
   .container-bs .bs-img {
     width: 100%;
-    background-color: red;
   }
   .container-bs .bs-img img {
     width: 100%;
   }
   .container-bs .info-container {
     width: 100%;
+    height: inherit;
     background-color: #2F5586;
     color: #f1f4f8;
     padding: 5%;
@@ -703,11 +853,34 @@ button {
     margin: 5px 0px;
     border: none;
     padding: 0 10px;
+    outline: none;
+    transition: ease-in all 0.3s;
+    font-size: 1rem;
+  }
+  .ser-orador form input:focus {
+    background-color: #2F5586;
+    color: white;
+    height: 35px;
+    border-radius: 5px;
+    margin: 5px 0px;
+    border: none;
+    padding: 0 10px;
+    outline: none;
+    letter-spacing: 2px;
+    font-size: 1.05rem;
   }
   .ser-orador form textarea {
     padding: 10px 10px;
-    height: 100px;
+    height: 50px;
     margin-top: 10px;
+    outline: none;
+    transition: ease-in 0.3s all;
+  }
+  .ser-orador form textarea:focus {
+    padding: 10px 10px;
+    height: 200px;
+    margin-top: 10px;
+    outline: none;
   }
   .ser-orador form p {
     font-size: 0.8rem;

@@ -22,11 +22,26 @@ button{
     border: 1px solid $white;
     font-size: $btn-normal;
 }
+.transparent:hover{
+    background-color: $primary;
+    color: $white;
+    border: none;
+    font-size: $btn-normal;
+}
 .bg-green{
     background-color: $green;
     color: $white;
     font-size: $btn-normal;
+    transition: ease all 0.3s;
 }
+.bg-green:hover{
+    background-color: rgb(86, 255, 129);
+    color: black;
+    font-size: $btn-normal;
+}
+
+
+
 .programming{
     height: 15px;
     font-family: $font2;

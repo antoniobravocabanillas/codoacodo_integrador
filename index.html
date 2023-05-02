@@ -1,12 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Integrador</title>
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./styles/main.css">
+    <!-- Estilos -->
 </head>
+
 <body>
-    
+    <div class="container">
+        <div class="header">
+            <div class="brand">
+                <a href="">
+                    <img src="/img/codoacodo.png" alt="">
+                </a>
+                <h4>Conf Bs As</h4>
+            </div>
+            <div class="nav-menu">
+                <ul>
+                    <li><a href="" id="confer">Conferencia</a></li>
+                    <li><a href="">Oradores</a></li>
+                    <li><a href="">Lugar y fecha</a></li>
+                    <li><a href="">Conviertete en orador</a></li>
+                    <li><a id="comprartickets" href=""><span>Camprar tickets</span></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Carrusel -->
+        <section class="carrousel">
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide" id="item1">
+                        <img src="/img/ba1.jpg" alt="">
+                    </div>
+                    <div class="slide" id="item2">
+                        <img src="/img/ba2.jpg" alt="">
+                    </div>
+                    <div class="slide" id="item3">
+                        <img src="/img/ba3.jpg" alt="">
+                    </div>
+                </div>
+                <div class="info-event">
+                    <h1>Conf Bs As</h1>
+                    <p>Lorem ipssed no delectus commodi dolores, consectetur nulla ab officiis veritatis deserunt fugit
+                        porro quod reprehenderit neque nemo non corporis laudantium repudiandae perferendis architecto
+                        itaque! Amet. <br><br>
+
+                        laboriosam voluptatibus quos fugit et illum excepturi incidunt deserunt earum magni vitae sunt
+                        recusandae deleniti suscipit officiis omnis.</p>
+
+                        <div class="btns">
+                            <button class="normal transparent"><span>Quiero ser orador</span></button>
+                            <button class="w-small bg-green"><span>Comprar tickets</span></button>
+                        </div>
+                </div>
+            </div>
+
+            <div class="slector-slide">
+                <a href="#item1">
+                    <div class="line"></div>
+                </a>
+                <a href="#item2">
+                    <div class="line"></div>
+                </a>
+                <a href="#item3">
+                    <div class="line"></div>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- Carrusel -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="oradores">
+            <div class="content">
+                <div class="text">
+                    <h5>Conoce a los</h5>
+                    <h2>oradores</h2>
+                </div>
+                <div class="oradores-cards">
+                    <div class="card">
+                        <img src="/img/steve.jpg" alt="">
+                        <div class="info-card">
+                            <div class="btns">
+                                <button class="programming js "><span>Javascript</span></button>
+                                <button class="programming react"><span>React</span></button>
+                            </div>
+                            <div class="text">
+                                <h3>Steve Jobs</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo quos reprehenderit
+                                    fuga porro assumenda beatae debitis nam aut perferendis labore.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/img/bill.jpg" alt="">
+                        <div class="info-card">
+                            <div class="btns">
+                                <button class="programming js"><span>Javascript</span></button>
+                                <button class="programming react"><span>React</span></button>
+                            </div>
+                            <div class="text">
+                                <h3>Bill Gates</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo quos reprehenderit
+                                    fuga porro assumenda beatae debitis nam aut perferendis labore.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/img/ada.jpeg" alt="">
+                        <div class="info-card">
+                            <div class="btns">
+                                <button class="negocios"><span>Negocios</span></button>
+                                <button class="startups"><span>Startups</span></button>
+                            </div>
+                            <div class="text">
+                                <h3>Ada Lovelace</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo quos reprehenderit
+                                    fuga porro assumenda beatae debitis nam aut perferendis labore.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container-bs">
+            <div class=" bs-img">
+                <img src="/img/honolulu.jpg" alt="">
+            </div>
+            <div class=" info-container">
+                <h2>Bs As - Octubre</h2>
+                <p>Buenos Aires es la gran capital cosmopolita de Argentina. Su centro es la Plaza de Mayo, rodeada de
+                    imponentes edificios del siglo XIX, incluida la Casa Rosada, el icónico palacio presidencial que
+                    tiene varios balcones. Entre otras atracciones importantes, se incluyen el Teatro Colón, un lujoso
+                    teatro de ópera de 1908 con cerca de 2,500 asientos, y el moderno museo MALBA, que exhibe arte
+                    latinoamericano.</p>
+
+                <button class="transparent normal"><span>Conoce mas</span></button>
+            </div>
+        </div>
+
+        <div class="ser-orador">
+            <h5>convertite en</h5>
+            <h2>orador</h2>
+            <p>Anotate como orador para dar una <span>charla ignite.</span>Cuentanos de que quieres hablar!</p>
+            <form action="">
+
+
+                <input autocomplete="disable" type="text" id="name" placeholder="Nombre">
+                <input autocomplete="disable" type="text" name="" id="" placeholder="Apellido">
+
+
+                <textarea name="mensaje" id="mensaje" placeholder="Sobre que quieres hablar?"
+                    maxlength="200"></textarea>
+                <p><span>Recuerda incluir un titulo para tu charla</span></p>
+
+                <button class="submit normal bg-green" type="submit">Enviar</button>
+            </form>
+
+        </div>
+
+        <footer>
+            <ul>
+                <li><a href="">
+                        Preguntas frecuentes
+                    </a></li>
+                <li><a href="">
+                        Contactanos
+                    </a></li>
+                <li><a href="">
+                        Prensa
+                    </a></li>
+                <li><a href="">
+                        Conferencias
+                    </a></li>
+                <li><a href="">
+                        Terminos y condiciones
+                    </a></li>
+                <li><a href="">
+                        Privacidad
+                    </a></li>
+                <li><a href="">
+                        Estudiantes
+                    </a></li>
+            </ul>
+
+        </footer>
+
+
+        <!--Cierra container principal -->
+    </div>
+
+
 </body>
+
 </html>
