@@ -74,3 +74,22 @@ button{
     color: $white;
 }
 
+.form{
+    width: 365px;
+}
+
+
+.btn-cerrar-menu{
+    margin-top: 50px;
+    width: 150px ;
+    height: 50px;
+    font-family: $font2;
+    button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        height: inherit;
+        width: inherit;
+    }
+}

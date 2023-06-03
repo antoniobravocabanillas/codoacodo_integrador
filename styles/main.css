@@ -80,10 +80,23 @@ button {
   color: #f1f4f8;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.form {
+  width: 365px;
+}
+
+.btn-cerrar-menu {
+  margin-top: 50px;
+  width: 150px;
+  height: 50px;
+  font-family: "Red Hat Text", sans-serif;
+}
+.btn-cerrar-menu button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: inherit;
+  width: inherit;
 }
 
 @media only screen and (max-width: 600px) {
@@ -93,30 +106,95 @@ button {
     padding: 0;
     position: relative;
   }
+  .container .loader {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background-color: rgba(160, 160, 160, 0.082);
+  }
+  .container .loader .spinner {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    animation-name: sizeSpinner;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: linear;
+    animation-duration: 0.5s;
+  }
+  @keyframes sizeSpinner {
+    0% {
+      width: 10px;
+      height: 10px;
+    }
+    50% {
+      width: 15px;
+      height: 15px;
+    }
+    100% {
+      width: 10px;
+      height: 10px;
+    }
+  }
   .header {
     height: 12vh;
     display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #353A40;
   }
   .header .brand {
-    width: 60%;
+    width: 70%;
     height: inherit;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
   }
   .header .brand img {
     width: 100px;
   }
   .header .brand h4 {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #f1f4f8;
     font-family: "Nunito Sans", sans-serif;
+    font-weight: 800;
+  }
+  .header .nav-menu.active {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    z-index: 100;
+    background-color: #2F5586;
+    top: 0;
+    left: 0;
   }
   .header .nav-menu {
-    height: inherit;
-    width: 40%;
+    height: 100vh;
+    width: 100%;
     display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    z-index: 100;
+  }
+  .header .nav-menu ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .header .nav-menu ul li {
     display: block;
@@ -125,6 +203,28 @@ button {
     display: block;
     text-decoration: none;
     color: #f1f4f8;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    height: 40px;
+  }
+  .header .btn-toggle {
+    width: 50px;
+    height: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    padding: 10px;
+    border-radius: 30%;
+    box-shadow: inset -3px 0px 0px 0px rgba(147, 255, 188, 0.5), inset 3px 0px 0px 0px rgba(255, 222, 112, 0.5), inset 0px 3px 0px 0px rgba(255, 199, 13, 0.5), inset 0px -3px 0px 0px rgba(2, 179, 69, 0.5);
+  }
+  .header .btn-toggle div {
+    width: 8px;
+    height: 8px;
+    border-radius: 3px;
+    background-color: linear-gradient(to right, #f1f4f8 0.9, #08b14e 0.99);
+    border: 1px solid white;
   }
   .carrousel {
     position: relative;
@@ -144,7 +244,7 @@ button {
   .slides .slide img {
     -o-object-fit: cover;
        object-fit: cover;
-    filter: brightness(0.6);
+    filter: brightness(0.3);
   }
   @keyframes slide {
     0% {
@@ -190,7 +290,7 @@ button {
     color: #f1f4f8;
   }
   .info-event h1 {
-    font-family: "Red Hat Text", sans-serif;
+    font-family: "Nunito Sans", sans-serif;
     font-size: 3rem;
   }
   .info-event p {
@@ -234,6 +334,496 @@ button {
     border-radius: 15px;
     box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.5);
     background-color: rgba(183, 187, 198, 0.5);
+  }
+  .oradores-cards .card img {
+    width: 100%;
+  }
+  .oradores-cards .info-card {
+    padding: 0 10px;
+  }
+  .oradores-cards .info-card .text {
+    padding: 20px 0;
+  }
+  .oradores-cards .info-card .text h3 {
+    width: 80vw;
+    font-size: 1.2 0.9rem;
+    font-family: "Red Hat Text", sans-serif;
+  }
+  .oradores-cards .info-card .text p {
+    font-size: 1rem;
+    font-family: "Red Hat Text", sans-serif;
+  }
+  .container-bs {
+    display: grid;
+    grid-template-columns: auto;
+    width: 100vw;
+    padding: 0px 0px 50px 0px;
+  }
+  .container-bs img {
+    width: 100%;
+    margin: 0;
+  }
+  .container-bs .info-container {
+    margin-top: -10px;
+    padding: 40px 20px;
+    background-color: #2F5586;
+    color: #f1f4f8;
+  }
+  .container-bs .info-container h2 {
+    font-size: 2rem;
+    font-family: "Nunito Sans", sans-serif;
+  }
+  .container-bs .info-container p {
+    font-size: 1rem;
+    font-family: "Red Hat Text", sans-serif;
+    margin-bottom: 30px;
+  }
+  .ser-orador {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    /*FORMULARIO COMPRAR TICKET*/
+    /*FORMULARIO COMPRAR TICKET*/
+    /*FORMULARIO COMPRAR TICKET*/
+    /*FORMULARIO COMPRAR TICKET*/
+  }
+  .ser-orador h5 {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .ser-orador h2 {
+    font-family: "Red Hat Text", sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .ser-orador p {
+    font-family: "Red Hat Text", sans-serif;
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  .ser-orador form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+  }
+  .ser-orador form input {
+    background-color: rgba(183, 187, 198, 0.5);
+    height: 35px;
+    border-radius: 5px;
+    margin: 5px 0px;
+    border: none;
+    padding: 0 10px;
+  }
+  .ser-orador form input:focus {
+    outline: none;
+  }
+  .ser-orador form textarea {
+    padding: 10px 10px;
+    border-radius: 5px;
+    height: 100px;
+    margin-top: 10px;
+    outline: none;
+  }
+  .ser-orador form p {
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+  }
+  .ser-orador form button {
+    margin: auto;
+  }
+  .ser-orador .formularioTicket {
+    padding-top: 50px;
+    width: 100%;
+    background-color: #ca3a3a;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .ser-orador .formularioTicket .container-dctos {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+  }
+  .ser-orador .formularioTicket .container-dctos div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 200px;
+    border-radius: 2px;
+  }
+  .ser-orador .formularioTicket .container-dctos div h4 {
+    font-size: 2rem;
+    font-family: "Red Hat Text", sans-serif;
+    color: rgb(39, 39, 39);
+  }
+  .ser-orador .formularioTicket .container-dctos div h3 {
+    font-size: 2rem;
+    font-family: "Red Hat Text", sans-serif;
+  }
+  .ser-orador .formularioTicket .container-dctos div p {
+    font-size: 1rem;
+    font-family: "Nunito Sans", sans-serif;
+  }
+  .ser-orador .formularioTicket .container-dctos div p span {
+    font-size: 0.8rem;
+    font-family: "Nunito Sans", sans-serif;
+    color: rgb(65, 65, 65);
+  }
+  .ser-orador .formularioTicket form {
+    width: 750px;
+    margin: auto;
+    padding-bottom: 100px;
+  }
+  .ser-orador .formularioTicket form h4 {
+    margin-top: 50px;
+    font-size: 0.9rem;
+    font-family: "Nunito Sans", sans-serif;
+    text-align: center;
+  }
+  .ser-orador .formularioTicket form h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-family: "Red Hat Text", sans-serif;
+  }
+  .ser-orador .formularioTicket form .datos-comprador {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2px 20px;
+    margin-bottom: 50px;
+  }
+  .ser-orador .formularioTicket form #email {
+    grid-column: 1/span 2;
+    margin: 0;
+  }
+  .ser-orador .formularioTicket form input {
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.425);
+    padding: 10px;
+    margin: 0;
+  }
+  .ser-orador .formularioTicket form input:focus,
+  .ser-orador .formularioTicket form select:focus {
+    outline: none;
+    border-color: #07616d;
+  }
+  .ser-orador .formularioTicket form select {
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.425);
+    padding: 10px;
+    margin: 0;
+  }
+  .ser-orador .formularioTicket form select option {
+    background-color: #07616d;
+  }
+  .ser-orador .formularioTicket form select option p {
+    color: #08b14e;
+  }
+  .ser-orador .formularioTicket .resumenCompra {
+    border-radius: 5px;
+    display: none;
+    height: 200px;
+    background-color: rgb(183, 245, 186);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    justify-items: start;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  .ser-orador .formularioTicket .resumenCompra span {
+    font-weight: 800;
+  }
+  .ser-orador .formularioTicket .resumenCompra h4,
+  .ser-orador .formularioTicket .resumenCompra h3 {
+    padding: 10px;
+    height: 20px;
+    width: 170px;
+    text-align: start;
+    margin: 0;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+  }
+  .ser-orador .formularioTicket .resumenCompra div {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .ser-orador .formularioTicket .btsForm {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  footer {
+    background-color: #07616d;
+    color: #f1f4f8;
+    padding: 20px 20px;
+  }
+  footer ul li {
+    list-style: none;
+  }
+  footer ul li a {
+    text-decoration: none;
+    color: #f1f4f8;
+    font-family: "Red Hat Text", sans-serif;
+    font-size: 0.8rem;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*VERSION MOVIL*/
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 100vw;
+    height: auto;
+    padding: 0;
+    position: relative;
+  }
+  .container .loader {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background-color: rgba(160, 160, 160, 0.082);
+  }
+  .container .loader .spinner {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    animation-name: sizeSpinner;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: linear;
+    animation-duration: 0.5s;
+  }
+  @keyframes sizeSpinner {
+    0% {
+      width: 10px;
+      height: 10px;
+    }
+    50% {
+      width: 15px;
+      height: 15px;
+    }
+    100% {
+      width: 10px;
+      height: 10px;
+    }
+  }
+  .header {
+    height: 12vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #353A40;
+  }
+  .header .brand {
+    width: 70%;
+    height: inherit;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .header .brand img {
+    width: 100px;
+  }
+  .header .brand h4 {
+    font-size: 0.8rem;
+    color: #f1f4f8;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 800;
+  }
+  .header .nav-menu.active {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    z-index: 100;
+    background-color: #2F5586;
+    top: 0;
+    left: 0;
+  }
+  .header .nav-menu {
+    height: 100vh;
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    z-index: 100;
+  }
+  .header .nav-menu ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .header .nav-menu ul li {
+    display: block;
+  }
+  .header .nav-menu ul li a {
+    display: block;
+    text-decoration: none;
+    color: #f1f4f8;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    height: 40px;
+  }
+  .header .btn-toggle {
+    width: 50px;
+    height: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    padding: 10px;
+    border-radius: 30%;
+    box-shadow: inset -3px 0px 0px 0px rgba(147, 255, 188, 0.5), inset 3px 0px 0px 0px rgba(255, 222, 112, 0.5), inset 0px 3px 0px 0px rgba(255, 199, 13, 0.5), inset 0px -3px 0px 0px rgba(2, 179, 69, 0.5);
+  }
+  .header .btn-toggle div {
+    width: 8px;
+    height: 8px;
+    border-radius: 3px;
+    background-color: linear-gradient(to right, #f1f4f8 0.9, #08b14e 0.99);
+    border: 1px solid white;
+  }
+  .carrousel {
+    position: relative;
+    width: 100vw;
+  }
+  .slides {
+    height: 75vh;
+    position: relative;
+    overflow: hidden;
+  }
+  .slides .slide {
+    animation: infinite;
+    animation-duration: 30s;
+    animation-name: slide;
+    animation-direction: alternate-reverse;
+  }
+  .slides .slide img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    filter: brightness(0.3);
+  }
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    33% {
+      transform: translateX(-100%);
+    }
+    66% {
+      transform: translateX(-200%);
+    }
+    100% {
+      transform: translateX(-300%);
+    }
+  }
+  .slector-slide {
+    width: inherit;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -30px;
+  }
+  .slector-slide .line {
+    margin-top: -200px;
+    width: 35px;
+    height: 5px;
+    background-color: rgba(235, 235, 235, 0.5);
+    border-radius: 20px;
+    margin: 2px;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.185);
+  }
+  .info-event {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 30px;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #f1f4f8;
+  }
+  .info-event h1 {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 3rem;
+  }
+  .info-event p {
+    font-family: "Red Hat Text", sans-serif;
+    font-size: 1rem;
+  }
+  .oradores {
+    width: 100vw;
+    height: auto;
+    background-color: #f1f4f8;
+    padding: 20px 0px 50px 0px;
+  }
+  .oradores .text {
+    padding: 50px 0 40px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .oradores .text h5 {
+    font-size: 0.8rem;
+    font-family: "Nunito Sans", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .oradores .text h2 {
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-family: "Red Hat Text", sans-serif;
+  }
+  .oradores-cards {
+    width: 100vw;
+    height: auto;
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    gap: 20px;
+  }
+  .oradores-cards .card {
+    width: 85vw;
+    border-radius: 15px;
+    box-shadow: inset 0px 0px 0px 1px #000;
+    background-color: #f1f4f8;
   }
   .oradores-cards .card img {
     width: 100%;
@@ -333,6 +923,196 @@ button {
   .ser-orador form button {
     margin: auto;
   }
+  /*FORMULARIO COMPRAR TICKET*/
+  /*FORMULARIO COMPRAR TICKET*/
+  /*FORMULARIO COMPRAR TICKET*/
+  #seccionTicket {
+    display: none;
+  }
+  .formularioTicket {
+    padding-top: 30px;
+    width: 100%;
+    height: auto;
+    background: linear-gradient(135deg, #08b14e, #f1f4f8);
+    position: static;
+  }
+  .formularioTicket .container-dctos {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: center;
+  }
+  .formularioTicket .container-dctos div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    height: auto;
+    border-radius: 10px;
+    background-color: #f1f4f8;
+  }
+  .formularioTicket .container-dctos div h4 {
+    font-size: 1.2 0.9rem;
+    font-family: "Red Hat Text", sans-serif;
+    color: rgb(39, 39, 39);
+    margin-top: 20px;
+  }
+  .formularioTicket .container-dctos div h3 {
+    font-size: 1.6rem;
+    font-family: "Red Hat Text", sans-serif;
+    text-align: center;
+  }
+  .formularioTicket .container-dctos div p {
+    font-size: 0.8rem;
+    font-family: "Nunito Sans", sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .formularioTicket .container-dctos div p span {
+    font-size: 0.8rem;
+    font-family: "Nunito Sans", sans-serif;
+    color: rgb(65, 65, 65);
+  }
+  .formularioTicket form {
+    color: #fff;
+    width: 80%;
+    margin: auto;
+    font-family: "Nunito Sans", sans-serif;
+    padding-bottom: 100px;
+  }
+  .formularioTicket form h4 {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    font-family: "Nunito Sans", sans-serif;
+    text-align: center;
+  }
+  .formularioTicket form h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-family: "Red Hat Text", sans-serif;
+  }
+  .formularioTicket form .datos-comprador {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 50px;
+  }
+  .formularioTicket form #email {
+    grid-column: 1/span 2;
+    margin: 0;
+  }
+  .formularioTicket form input {
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.425);
+    padding: 5px;
+    margin: 0;
+  }
+  .formularioTicket form .contenedorTipo {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  .formularioTicket form .contenedorTipo input {
+    width: 50%;
+  }
+  .formularioTicket form .contenedorTipo select {
+    width: 50%;
+  }
+  .formularioTicket form input:focus,
+  .formularioTicket form select:focus {
+    outline: none;
+    border-color: #07616d;
+  }
+  .formularioTicket form #category {
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.425);
+    padding: 10px;
+    margin: 0;
+    background-color: white;
+  }
+  .formularioTicket form #category .option {
+    background-color: #08b14e;
+  }
+  .formularioTicket form #category .option p {
+    color: #08b14e;
+  }
+  .formularioTicket .resumenCompra {
+    width: 100%;
+    border-radius: 5px;
+    display: none;
+    height: 200px;
+    background-color: #f1f4f8;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    justify-items: start;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  .formularioTicket .resumenCompra .tittle {
+    width: 100%;
+    font-family: "Nunito Sans", sans-serif;
+    color: #000;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .formularioTicket .resumenCompra div {
+    width: auto;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin: auto;
+  }
+  .formularioTicket .resumenCompra div .tittle-item {
+    width: 80%;
+    color: #000;
+    font-weight: 900;
+  }
+  .formularioTicket .resumenCompra div #categoriaComprador {
+    text-transform: capitalize;
+  }
+  .formularioTicket .resumenCompra .totalPago {
+    height: 50px;
+  }
+  .formularioTicket .resumenCompra .totalPago h4 {
+    color: #353A40;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  .formularioTicket .resumenCompra h4 {
+    padding-left: 10px;
+    height: auto;
+    width: 50%;
+    color: #000;
+    text-align: start;
+    margin: auto;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+    border-bottom: 1px dashed rgb(180, 180, 180);
+  }
+  .formularioTicket .resumenCompra div {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .formularioTicket .btsForm {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  .formularioTicket .btsForm #confirmarCompra {
+    display: none;
+  }
+  /*FORMULARIO COMPRAR TICKET*/
   footer {
     background-color: #07616d;
     color: #f1f4f8;
@@ -348,7 +1128,11 @@ button {
     font-size: 0.8rem;
   }
 }
+/*VERSION MOVIL*/
 @media (min-width: 600px) and (max-width: 900px) {
+  #btn-cerrar-menu {
+    display: none;
+  }
   .header {
     height: 12vh;
     display: flex;
@@ -385,6 +1169,15 @@ button {
   .carrousel {
     position: relative;
     width: 100vw;
+  }
+  .slides::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #08b14e 0.7, #f1f4f8 0.7);
   }
   .slides {
     height: 75vh;
@@ -603,7 +1396,203 @@ button {
     font-size: 0.8rem;
   }
 }
+/*ESTILOS PARA PANTALLAS GRANDES*/
 @media (min-width: 900px) {
+  #btn-cerrar-menu {
+    display: none;
+  }
+  /*FORMULARIO COMPRAR TICKET*/
+  /*FORMULARIO COMPRAR TICKET*/
+  /*FORMULARIO COMPRAR TICKET*/
+  #seccionTicket {
+    display: none;
+  }
+  .formularioTicket {
+    padding-top: 30px;
+    width: 100%;
+    height: auto;
+    background: linear-gradient(135deg, #08b14e, #f1f4f8);
+    position: static;
+  }
+  .formularioTicket .container-dctos {
+    max-width: 901px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: center;
+  }
+  .formularioTicket .container-dctos div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    height: auto;
+    border-radius: 10px;
+    background-color: #f1f4f8;
+  }
+  .formularioTicket .container-dctos div h4 {
+    font-size: 2rem;
+    font-family: "Red Hat Text", sans-serif;
+    color: rgb(39, 39, 39);
+    margin-top: 20px;
+  }
+  .formularioTicket .container-dctos div h3 {
+    font-size: 2.8rem;
+    font-family: "Red Hat Text", sans-serif;
+    text-align: center;
+  }
+  .formularioTicket .container-dctos div p {
+    font-size: 1rem;
+    font-family: "Nunito Sans", sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .formularioTicket .container-dctos div p span {
+    font-size: 0.8rem;
+    font-family: "Nunito Sans", sans-serif;
+    color: rgb(146, 146, 146);
+  }
+  .formularioTicket form {
+    color: #fff;
+    max-width: 901px;
+    margin: auto;
+    font-family: "Nunito Sans", sans-serif;
+    padding-bottom: 100px;
+  }
+  .formularioTicket form h4 {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    font-family: "Nunito Sans", sans-serif;
+    text-align: center;
+  }
+  .formularioTicket form h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-family: "Red Hat Text", sans-serif;
+  }
+  .formularioTicket form .datos-comprador {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 50px;
+  }
+  .formularioTicket form #email {
+    grid-column: 1/span 2;
+    margin: 0;
+  }
+  .formularioTicket form input {
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.425);
+    padding: 5px;
+    margin: 0;
+  }
+  .formularioTicket form .contenedorTipo {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  .formularioTicket form .contenedorTipo input {
+    width: 50%;
+  }
+  .formularioTicket form .contenedorTipo select {
+    width: 50%;
+  }
+  .formularioTicket form input:focus,
+  .formularioTicket form select:focus {
+    outline: none;
+    border-color: #07616d;
+  }
+  .formularioTicket form #category {
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.425);
+    padding: 10px;
+    margin: 0;
+    background-color: white;
+  }
+  .formularioTicket form #category .option {
+    background-color: #08b14e;
+  }
+  .formularioTicket form #category .option p {
+    color: #08b14e;
+  }
+  .formularioTicket .resumenCompra {
+    width: 100%;
+    border-radius: 5px;
+    display: none;
+    height: 200px;
+    background-color: #f1f4f8;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    justify-items: start;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  .formularioTicket .resumenCompra .tittle {
+    width: 100%;
+    font-family: "Nunito Sans", sans-serif;
+    color: #000;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .formularioTicket .resumenCompra div {
+    width: auto;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin: auto;
+  }
+  .formularioTicket .resumenCompra div .tittle-item {
+    width: 80%;
+    color: #000;
+    font-weight: 900;
+  }
+  .formularioTicket .resumenCompra div #categoriaComprador {
+    text-transform: capitalize;
+  }
+  .formularioTicket .resumenCompra .totalPago {
+    height: 50px;
+  }
+  .formularioTicket .resumenCompra .totalPago h4 {
+    color: #353A40;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  .formularioTicket .resumenCompra h4 {
+    padding-left: 10px;
+    height: auto;
+    width: 50%;
+    color: #000;
+    text-align: start;
+    margin: auto;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+    border-bottom: 1px dashed rgb(180, 180, 180);
+  }
+  .formularioTicket .resumenCompra div {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .formularioTicket .btsForm {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  .formularioTicket .btsForm #confirmarCompra {
+    display: none;
+  }
+  /*FORMULARIO COMPRAR TICKET*/
+  /*FORMULARIO COMPRAR TICKET*/
+  /*FORMULARIO COMPRAR TICKET*/
   .header {
     height: 12vh;
     display: flex;
@@ -658,8 +1647,15 @@ button {
     position: relative;
     width: 100%;
   }
+  .slide::before {
+    content: " ";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+  }
   .slides {
-    background-color: black;
     height: 75vh;
     position: relative;
     overflow: hidden;
@@ -674,7 +1670,6 @@ button {
   .slides .slide img {
     -o-object-fit: cover;
        object-fit: cover;
-    filter: brightness(0.7);
   }
   @keyframes slide {
     0% {
@@ -912,4 +1907,5 @@ button {
     font-family: "Red Hat Text", sans-serif;
     font-size: 0.8rem;
   }
-}/*# sourceMappingURL=main.css.map */
+}
+/*ESTILOS PARA PANTALLAS GRANDES*//*# sourceMappingURL=main.css.map */

@@ -9,10 +9,32 @@
     <!-- Estilos -->
     <link rel="stylesheet" href="./styles/main.css">
     <!-- Estilos -->
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- fontawesome -->
 </head>
 
 <body>
+
+
+
+
     <div class="container">
+        <div  class="loader">
+            <div class="spinner"></div>
+            <div class="spinner"></div>
+            <div class="spinner"></div>
+            <div class="spinner"></div>
+            <div class="spinner"></div>
+            <div class="spinner"></div>
+            <div class="spinner"></div>
+            <div class="spinner"></div>
+            <div class="spinner"></div>
+        </div>
+
+
+
+
         <div class="header">
             <div class="brand">
                 <a href="">
@@ -22,17 +44,40 @@
             </div>
             <div class="nav-menu">
                 <ul>
-                    <li><a href="" id="confer">Conferencia</a></li>
-                    <li><a href="">Oradores</a></li>
-                    <li><a href="">Lugar y fecha</a></li>
-                    <li><a href="">Conviertete en orador</a></li>
-                    <li><a id="comprartickets" href=""><span>Camprar tickets</span></a></li>
+                    <li><a class="items-menu" href="" id="#conferencia">Conferencia</a></li>
+                    <li><a class="items-menu" href="#oradores">Oradores</a></li>
+                    <li><a class="items-menu" href="">Lugar y fecha</a></li>
+                    <li><a class="items-menu" href="#ser-orador">Conviertete en orador</a></li>
+                    <li><a class="items-menu" id="comprartickets" href="#seccionTicket"><span>Camprar tickets</span></a></li>
+                    <!-- btn-cerrar-menu -->
+                    <div id="btn-cerrar-menu" class="btn-cerrar-menu">
+                        <button>
+                            <i class="fa solid fa-power-off"></i>
+                            Cerrar menu
+                        </button>
+                    </div>
+                    <!-- btn-cerrar-menu -->
                 </ul>
             </div>
+            <!-- toggle -->
+            <!-- toggle -->
+            <div class="btn-toggle">
+                <div class="div"></div>
+                <div class="div"></div>
+                <div class="div"></div>
+                <div class="div"></div>
+                <div class="div"></div>
+                <div class="div"></div>
+                <div class="div"></div>
+                <div class="div"></div>
+                <div class="div"></div>
+            </div>
+            <!-- toggle -->
+            <!-- toggle -->
         </div>
 
         <!-- Carrusel -->
-        <section class="carrousel">
+        <section id="conferencia" class="carrousel">
             <div class="slider">
                 <div class="slides">
                     <div class="slide" id="item1">
@@ -54,10 +99,14 @@
                         laboriosam voluptatibus quos fugit et illum excepturi incidunt deserunt earum magni vitae sunt
                         recusandae deleniti suscipit officiis omnis.</p>
 
-                        <div class="btns">
-                            <button class="normal transparent"><span>Quiero ser orador</span></button>
-                            <button class="w-small bg-green"><span>Comprar tickets</span></button>
-                        </div>
+                    <div class="btns">
+                        <a href="#ser-orador"><button class="normal transparent"><span>Quiero ser
+                                    orador</span></button></a>
+
+
+                        <a href="#comprartktForm"><button id="btnComprarTickets" class="w-small bg-green"><span>Comprar
+                                    tickets</span></button></a>
+                    </div>
                 </div>
             </div>
 
@@ -87,13 +136,7 @@
 
 
 
-
-
-
-
-
-
-        <div class="oradores">
+        <div id="oradores" class="oradores">
             <div class="content">
                 <div class="text">
                     <h5>Conoce a los</h5>
@@ -164,7 +207,7 @@
             </div>
         </div>
 
-        <div class="ser-orador">
+        <div id="ser-orador" class="ser-orador">
             <h5>convertite en</h5>
             <h2>orador</h2>
             <p>Anotate como orador para dar una <span>charla ignite.</span>Cuentanos de que quieres hablar!</p>
@@ -183,6 +226,133 @@
             </form>
 
         </div>
+
+
+        <!-- Formulario para comprar tickets -->
+        <!-- Formulario para comprar tickets -->
+        <section class="formularioTicket" id="seccionTicket">
+            <div id="containerDivsDEsct" class="container-dctos">
+                <div class="estudiante">
+                    <h4>Estudiante</h4>
+                    <br>
+                    <p>Tiene un descuento</p>
+                    <h3 id="estudiante"></h3>
+                    <br>
+
+                    <p><span>* presentar documentacion</span></p>
+                </div>
+                <div class="traine">
+                    <h4>Trainee</h4>
+                    <br>
+                    <p>Tiene un descuento</p>
+                    <h3 id="trainee"></h3>
+                    <br>
+
+                    <p><span>* presentar documentacion</span></p>
+                </div>
+                <div class="junior">
+                    <h4>Junior</h4>
+                    <br>
+                    <p>Tiene un descuento</p>
+                    <h3 id="junior"></h3>
+                    <br>
+
+
+                    <p><span>* presentar documentacion</span></p>
+                </div>
+
+
+            </div>
+
+
+
+            <form action="" id="comprartktForm">
+                <h2 style="margin-top: 20px;"  >VENTA</h2>
+                <h2 id="valorTkc"></h2>
+
+                <div class="datos-comprador">
+
+                    <input class="datosContacto" type="text" name="nombre" id="nombre" placeholder="nombre">
+                    <input class="datosContacto" type="text" name="apellido" id="apellido" placeholder="apellido">
+                    
+                    <input class="datosContacto" type="email" name="email" id="email" placeholder="pepito@gmail.com">
+
+
+                    <div class="contenedorTipo">
+                        <input type="number" name="cantidad" id="cantidad_tickets" placeholder="Cantidad">
+                    <select name="categoria" id="category" >
+
+                        <option class="option" value="estudiante">
+                            <p id="value_01">Estudiante</p>
+                        </option>
+                        <option class="option" value="trainee">
+                            <p id="value_02">Trainee</p>
+                        </option>
+                        <option class="option" value="junior">
+                            <p id="value_03">Junior</p>
+                        </option>
+                    </select>
+                    </div>
+                </div>
+
+
+                <div id="resumenDeCompra" class="resumenCompra">
+                    <h3 class="tittle"> <span>Resumen de compra</span> </h3>
+                    <div class="cat">
+                        <h4 class="tittle-item" > Categoria: </h4>
+                        <h4 id="categoriaComprador"></h4>
+
+                    </div>
+                    <div class="cant">
+                        <h4 class="tittle-item" >Cantidad</h4>
+                        <h4 id="cantidadIngresada"></h4>
+                    </div>
+
+                    <div class="sinDscto">
+                        <h4 class="tittle-item" >Precio sin descuento</h4>
+                        <h4 id="totalSDscto" ></h4>
+                    </div>
+
+                    <div class="conDscto">
+                        <h4 class="tittle-item" >Descuento</h4>
+                        <h4 id="totalPagoConDescuento"></h4>
+                    </div>
+
+                    <div id="divTotalPago" class="totalPago">
+                        <h4 class="tittle-item"  >Total a pagar</h4>
+                        <h4 id="totalPagoResumen"></h4>
+                    </div>
+
+                </div>
+
+                <div class="btsForm">
+                    <button  type="button" class="normal bg-green form" id="borrarForm"> Borrar</button>
+
+                    <button type="button" class="normal bg-green form" id="resumenPago"> Resumen</button>
+                    <button type="button" class="normal bg-green form " id="confirmarCompra">Comprar</button>
+                </div>
+
+            </form>
+
+
+        </section>
+
+        <!-- Formulario para comprar tickets -->
+        <!-- Formulario para comprar tickets -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <footer>
             <ul>
@@ -216,6 +386,9 @@
     </div>
 
 
+
+
+    <script src="/static/main.js"></script>
 </body>
 
 </html>
