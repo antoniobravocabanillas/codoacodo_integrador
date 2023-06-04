@@ -103,12 +103,16 @@ for (let it = 0; it < ITEM.length; it++) {
 
 const VALOR_TICKET = parseInt(200);  //Valor inicial del ticket
 
+document.getElementById("valorTkc").textContent = `Valor del ticket $ ${VALOR_TICKET}`;
+
 // Definicion de variables
 var totalAPagar = 0;  
 var totalAPagarconDescuento = 0;
 var total_a_pagar_sin_descuento = 0;
 var total_a_pagar_con_descuento = 0 ;
 var descuentoAplicado = 0;
+
+
 
 
 

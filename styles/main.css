@@ -1411,7 +1411,7 @@ button {
     padding-top: 30px;
     width: 100%;
     height: auto;
-    background: linear-gradient(135deg, #08b14e, #f1f4f8);
+    background: linear-gradient(60deg, #07616d, #2F5586, #07616d);
     position: static;
   }
   .formularioTicket .container-dctos {
@@ -1514,10 +1514,13 @@ button {
     background-color: white;
   }
   .formularioTicket form #category .option {
-    background-color: #08b14e;
+    background-color: #f1f4f8;
+    height: 40px;
   }
   .formularioTicket form #category .option p {
     color: #08b14e;
+    height: 40px;
+    font-size: 1rem;
   }
   .formularioTicket .resumenCompra {
     width: 100%;
